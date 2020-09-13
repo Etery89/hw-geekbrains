@@ -1,0 +1,1 @@
+[{"Carmomaile": -50000, "Horns_and_hooves": 150000, "MGTS": 300000, "Murzilka": 90000}, {"average_profit": 180000}]
