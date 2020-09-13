@@ -15,3 +15,30 @@
 
 Подсказка: использовать менеджеры контекста.
 """
+import json
+
+
+with open("test7.txt", "r") as t:
+    count = 0
+    all_revenue = []
+    statistics = {}
+    for line in t:
+        list_line = line.strip().split()
+        list_nums = []
+        for elem in list_line:
+            if elem.isdigit():
+                list_nums.append(int(elem))
+        profit = list_nums[0] - list_nums[1]
+        if profit > 0:
+            all_revenue.append(profit)
+            statistics[list_line[0]] = profit
+            count += 1
+        else:
+            statistics[list_line[0]] = profit
+
+    average_profit = sum(all_revenue) // count
+    dict_average_profit = dict(average_profit=average_profit)
+    all_statistics = [statistics, dict_average_profit]
+    with open("json_data.txt", "w") as jd:
+        json.dump(all_statistics, jd)
+
