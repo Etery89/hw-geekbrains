@@ -17,20 +17,21 @@ class Matrix:
         self.list_from_matrix = list_row_from_matrix
 
     def __str__(self):
-        elem_for_print = []
+        str_for_print = ""
         for el in self.list_from_matrix:
             tmp_list = [str(num) for num in el]
-            elem_for_print.append(tmp_list)
-        return "{}\n{}".format(" ".join(elem_for_print[0]), " ".join(elem_for_print[1]))
+            tmp_str = " ".join(tmp_list)
+            str_for_print += tmp_str + "\n"
+        return str_for_print
 
     def __add__(self, other):
-        new_matrix = []
+        united_matrix = []
         for num in range(len(self.list_from_matrix)):
             tmp_list = []
             for el1, el2 in zip(self.list_from_matrix[num], other.list_from_matrix[num]):
                 tmp_list.append(el1 + el2)
-            new_matrix.append(tmp_list)
-        return Matrix(new_matrix)
+            united_matrix.append(tmp_list)
+        return Matrix(united_matrix)
 
 
 list_1 = [[1, 2, 3, 6], [4, 5, 6, 7]]
