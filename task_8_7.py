@@ -8,7 +8,13 @@
 
 
 class ComplexNumber:
-
+    """
+    Класс, хранящий комплексное число.
+    принимает позиционные параметры:
+    real_part -- вещественная часть
+    imaginary_part -- мнимая часть
+    аргумент класса imaginary_unit хранит мнимую единицу
+    """
     imaginary_unit = 1j
 
     def __init__(self, real_part, imaginary_part):
